@@ -275,7 +275,7 @@ const DEF={
  rating:'4,5',ratingN:'1.653',ratingSrc:'Treatwell',
  pay:'Bezahlung vor Ort – nur Barzahlung',
  hrs:[null,['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00']],
- rev:true,revG:'',
+ rev:true,revG:'ChIJZxdKsvmPsUcRRbGOk7ELcuk',
  cap:3,step:15,lead:30,days:30,buf:0,
  off:[],user:'admin',pwh:'3eb0853dfe144e5fd1728f4f06f02c22f23341e1e661f643906e3d238315b6a6',
  about:'Bei uns bekommst du gepflegte Hände und Füße ohne Stress: saubere Arbeit, große Farbauswahl und ein Team, das sich Zeit für dich nimmt. Du findest uns im Mundsburg Center direkt an der U-Bahn. Komm spontan vorbei oder buch deinen Termin online.',
@@ -411,14 +411,14 @@ addEventListener('keydown',e=>{const d=$('#lbx');if(!d||!d.classList.contains('o
 
 /* ---------- Bewertungen: 4–5 Sterne → Google, 1–3 Sterne → privates Feedback ---------- */
 let vs=0,vstep=0;
-const gLink=()=>S.revG||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(S.name+' '+S.addr1+' '+S.addr2));
+const gLink=()=>{const g=String(S.revG||'').trim();if(/^ChIJ[\w-]+$/.test(g))return 'https://search.google.com/local/writereview?placeid='+g;return g||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(S.name+' '+S.addr1+' '+S.addr2))};
 const STARS=n=>[1,2,3,4,5].map(i=>`<button type="button" role="radio" aria-checked="${i===n}" aria-label="${i} ${i>1?'Sterne':'Stern'}" class="${i<=n?'on':''}" onclick="pickStar(${i})">★</button>`).join('');
 function pickStar(n){vs=n;if(n>=4){vstep=4;const g=gLink();let w=null;try{w=window.open(g,'_blank');if(w)w.opener=null}catch(e){}reRev();if(!w){try{location.href=g}catch(e){}}return}vstep=1;reRev();setTimeout(()=>{const t=$('#vt');t&&t.focus()},50)}
 function reRev(){const b=$('#rvb');if(b)b.outerHTML=RevBox();else render()}
 function RevBox(){
  if(vstep===2)return `<div class="rvb card" id="rvb"><div class="ic" aria-hidden="true">♡</div><h2>Danke für dein Feedback!</h2><p class="mu">Deine Nachricht ist direkt bei uns angekommen. Wir melden uns, wenn du Kontaktdaten angegeben hast.</p><button class="b gh" onclick="vs=0;vstep=0;reRev()">Fertig</button></div>`;
  if(vstep===4)return `<div class="rvb card" id="rvb"><div class="stp2">${STARS(vs)}</div><h2>Danke, das freut uns riesig!</h2><p class="mu">Google ist in einem neuen Tab geöffnet – dort kannst du deine Bewertung schreiben. Hat sich nichts geöffnet?</p><a class="b" href="${esc(gLink())}" target="_blank" rel="noopener">Auf Google bewerten</a><button class="lk" onclick="vs=0;vstep=0;reRev()">Zurück</button></div>`;
- if(vstep===1)return `<form class="rvb card" id="rvb" data-act="rate" onsubmit="event.preventDefault()" novalidate><div class="stp2">${STARS(vs)}</div><h2>Das tut uns leid.<br>Was können wir besser machen?</h2><p class="mu">Deine Nachricht geht direkt an unser Team und wird nicht veröffentlicht.</p><div class="fg"><label class="f">Name<input id="vn" autocomplete="given-name"></label><label class="f">Telefon oder E-Mail <small>(optional)</small><input id="vk"></label><label class="f full">Was ist passiert?<textarea id="vt" rows="4"></textarea></label></div><p class="err" id="verr" role="alert"></p><button class="b full">Feedback senden</button></form>`;
+ if(vstep===1)return `<form class="rvb card" id="rvb" data-act="rate" onsubmit="event.preventDefault()" novalidate><div class="stp2">${STARS(vs)}</div><h2>Das tut uns leid.<br>Was können wir besser machen?</h2><p class="mu">Erzähl uns kurz, was nicht gepasst hat – wir kümmern uns darum.</p><div class="fg"><label class="f">Name<input id="vn" autocomplete="given-name"></label><label class="f">Telefon oder E-Mail <small>(optional)</small><input id="vk"></label><label class="f full">Was ist passiert?<textarea id="vt" rows="4"></textarea></label></div><p class="err" id="verr" role="alert"></p><button class="b full">Feedback senden</button></form>`;
  return `<div class="rvb card" id="rvb"><h2>Wie war dein Besuch?</h2><p class="mu">Tipp auf die Sterne – dein Feedback hilft uns sehr.</p><div class="stp2" role="radiogroup" aria-label="Sterne">${STARS(vs)}</div></div>`}
 function rate(){const n=$('#vn').value.trim(),t=$('#vt').value.trim();if(!t){$('#verr').textContent='Bitte schreib kurz, was passiert ist.';$('#vt').focus();return}
  R.push({id:Date.now(),n:n||'Anonym',s:vs,t,k:$('#vk').value.trim(),at:Date.now(),neu:1});saveR();vstep=2;reRev()}
@@ -556,7 +556,7 @@ const revUrl=()=>location.href.split('#')[0].split('?')[0]+'#bewerten';
 function Bew(){const nw=R.filter(x=>x.neu).length;if(nw){R.forEach(x=>delete x.neu);saveR()}
  return `<div class="card"><h3>So funktioniert’s</h3><p class="mu" style="margin-bottom:10px">Kundinnen geben auf der Website Sterne. <b>4–5 Sterne</b> → sie kommen direkt zu Google und bewerten dort. <b>1–3 Sterne</b> → sie schreiben dir hier privat, was nicht gepasst hat (wird nicht veröffentlicht).</p>
  <label class="ck"><input type="checkbox" ${S.rev?'checked':''} onchange="S.rev=this.checked;saveS();toast('Gespeichert')"> Bewertungen auf der Website anzeigen</label>
- <label class="f" style="margin-top:12px">Google-Bewertungslink <small>(leer = Google Maps-Suche)</small><input value="${esc(S.revG)}" placeholder="https://g.page/r/…/review" onchange="S.revG=this.value.trim();saveS();toast('Gespeichert')"></label>
+ <label class="f" style="margin-top:12px">Google-Bewertungslink oder Place-ID <small>(beginnt mit ChIJ…)</small><input value="${esc(S.revG)}" placeholder="https://g.page/r/…/review" onchange="S.revG=this.value.trim();saveS();toast('Gespeichert')"></label>
  <label class="f" style="margin-top:12px">Link zum Bewerten (zum Verschicken an Kundinnen)<span class="pw"><input readonly value="${esc(revUrl())}" onclick="this.select()"></span></label>
  <div class="acts" style="margin-top:10px"><button class="b sm gh" onclick="try{navigator.clipboard.writeText(revUrl());toast('Link kopiert')}catch(e){toast('Bitte Link markieren und kopieren',1)}">Link kopieren</button><a class="b sm gh" href="${esc(gLink())}" target="_blank" rel="noopener">Google-Link testen</a></div></div>
  <div class="card"><h3>Privates Feedback (1–3 Sterne)</h3>${R.length?R.slice().reverse().map(x=>`<div class="fbi"><div class="fbh"><b>${esc(x.n)}</b><span class="stx">${'★'.repeat(x.s)}<i>${'★'.repeat(5-x.s)}</i></span><small class="mu">${new Date(x.at).toLocaleDateString('de-DE',{day:'numeric',month:'short',year:'numeric'})}</small></div><p>${esc(x.t)}</p>${x.k?`<div class="ci">${/@/.test(x.k)?`<a class="b sm gh" href="mailto:${esc(x.k)}">E-Mail an ${esc(x.k)}</a>`:`<a class="b sm gh" href="${telHref(x.k)}">Anrufen</a><a class="b sm gh" href="https://wa.me/${waNum(x.k)}" target="_blank" rel="noopener">WhatsApp</a>`}</div>`:''}<button class="lk dn" onclick="if(confirm('Feedback löschen?')){R=R.filter(y=>y.id!==${x.id});saveR();render()}">Löschen</button></div>`).join(''):'<p class="mu">Noch kein Feedback – super! 🎉</p>'}</div>`}
