@@ -235,6 +235,31 @@ details{border-bottom:1px solid var(--line);padding:8px 0}summary{font-weight:70
 .ibb{display:grid;gap:8px}.ibb .b{justify-content:center;text-align:center}
 .inf{font-size:.85rem;font-weight:700;color:#2f8f5b;align-self:center}
 .cnf{background:var(--blush);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+
+.tc{display:block!important}
+.th{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}.th b{font-family:var(--serif);font-size:1.7rem;line-height:1}.th small{color:var(--muted)}.th .bd{margin-left:auto;align-self:center}
+.tn2{font-weight:800;font-size:1.05rem}.ts{margin:2px 0 8px}
+.tc .nt{margin-bottom:8px}
+.ci{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.ci .ic{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;color:var(--accent);background:var(--bg)}
+.ci .inf{margin-left:auto}
+.nfo{margin-left:auto;border:0;background:#fff3e2;color:var(--warn);font-weight:700;border-radius:99px;padding:8px 12px;cursor:pointer;font-size:.85rem}
+.ab2{display:flex;gap:8px}.ab2 .b{flex:1}.ab2 .mo{flex:0 0 auto}
+.ibx.sh{align-items:flex-end}.ibx.sh .card{border-radius:18px 18px 0 0;max-width:520px}
+@media(min-width:700px){.ibx.sh{align-items:center}.ibx.sh .card{border-radius:18px}}
+
+.rvb{max-width:560px;margin:0 auto;text-align:center;display:grid;gap:10px;justify-items:center;padding:28px 20px}
+.rvb h2{font-size:clamp(1.9rem,1.4rem + 2vw,2.6rem)}
+.rvb .fg{text-align:left;width:100%}.rvb form,.rvb .b.full{width:100%}
+.rvb .ic{width:56px;height:56px;border-radius:50%;background:var(--blush);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.stp2{display:flex;gap:4px;justify-content:center}
+.stp2 button{border:0;background:none;font-size:2.6rem;line-height:1;color:var(--blush2);cursor:pointer;padding:4px;transition:transform .15s,color .15s}
+.stp2 button.on{color:#d9a441}.stp2 button:active{transform:scale(1.2)}
+@media(hover:hover){.stp2:hover button{color:#d9a441}.stp2 button:hover~button{color:var(--blush2)}}
+.fbi{border-bottom:1px solid var(--line);padding:12px 0;display:grid;gap:6px}.fbi:last-child{border:0}
+.fbh{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.stx{color:#d9a441;letter-spacing:1px}.stx i{font-style:normal;color:var(--blush2)}
+.lk.dn{color:var(--bad);justify-self:start}
+.ck{display:flex;gap:10px;align-items:center;font-weight:600}
 </style></head><body>
 <header class="bar"><a class="wm" href="#home">Nails New Style</a><nav class="nl" aria-label="Hauptmenü"><a href="#leistungen">Leistungen &amp; Preise</a><a href="#galerie">Galerie</a><a href="#studio">Studio</a><a href="#kontakt">Kontakt</a><a href="#about">Über uns</a></nav><a class="b" href="#leistungen">Termin buchen</a><button class="mb" onclick="nav(1)" aria-label="Menü öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button></header>
 <div id="dw" role="dialog" aria-modal="true" aria-label="Menü"><div class="dh"><span class="wm">Nails New Style</span><button class="mb" style="display:inline-flex" onclick="nav(0)" aria-label="Menü schließen">✕</button></div><nav><a href="#leistungen"><span>Leistungen &amp; Preise</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a href="#galerie"><span>Galerie</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a href="#studio"><span>Unser Studio</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a href="#kontakt"><span>Kontakt &amp; Anfahrt</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a href="#about"><span>Über uns</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></nav><a class="b" href="#leistungen">Termin buchen</a><div class="dinfo"></div></div>
@@ -250,6 +275,7 @@ const DEF={
  rating:'4,5',ratingN:'1.653',ratingSrc:'Treatwell',
  pay:'Bezahlung vor Ort – nur Barzahlung',
  hrs:[null,['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00'],['09:30','20:00']],
+ rev:true,revG:'',
  cap:3,step:15,lead:30,days:30,buf:0,
  off:[],user:'admin',pwh:'3eb0853dfe144e5fd1728f4f06f02c22f23341e1e661f643906e3d238315b6a6',
  about:'Bei uns bekommst du gepflegte Hände und Füße ohne Stress: saubere Arbeit, große Farbauswahl und ein Team, das sich Zeit für dich nimmt. Du findest uns im Mundsburg Center direkt an der U-Bahn. Komm spontan vorbei oder buch deinen Termin online.',
@@ -286,6 +312,7 @@ const clone=o=>JSON.parse(JSON.stringify(o));
 function initS(){const s=clone(DEF);s.svc=[];s.catList=[];let n=1;DEF.cats.forEach(([c,L])=>{s.catList.push(c);L.forEach(([nm,d,p])=>s.svc.push({id:'s'+(n++),cat:c,n:nm,d,p,on:true}))});delete s.cats;s.auto=true;return s}
 let S=Object.assign(initS(),ls.get('nnsS',{}));
 let B=ls.get('nnsB',[]);
+let R=ls.get('nnsR',[]);const saveR=()=>ls.set('nnsR',R);
 let P=Object.assign({hero:'',about:'',g:[]},ls.get('nnsP',{}));
 const saveS=()=>ls.set('nnsS',S),saveB=()=>ls.set('nnsB',B),saveP=()=>ls.set('nnsP',P);
 const pic=k=>k==='hero'?(P.hero||PH.hero||''):k==='about'?(P.about||PH.about||''):'';
@@ -319,10 +346,10 @@ function updSel(){$$('.svc .sel').forEach(b=>{const on=sel.includes(b.dataset.id
 let RT=(location.hash.slice(1)||'home');const route=()=>RT;
 function go(h){h=String(h||'').replace(/^#/,'')||'home';const sec=['leistungen','about','galerie','studio','produkte','kontakt'].includes(h);if(sec){if(RT!=='home'){RT='home';render()}nav(0);setTimeout(()=>{const e=document.getElementById(h);e&&e.scrollIntoView({behavior:'smooth'})},30);return}
  RT=h;try{history.pushState(null,'','#'+h)}catch(e){}scrollTo({top:0,behavior:'instant'});nav(0);render()}
-addEventListener('popstate',()=>{const h=location.hash.slice(1)||'home';if(['buchen','admin','home'].includes(h)&&h!==RT){RT=h;render()}});
+addEventListener('popstate',()=>{const h=location.hash.slice(1)||'home';if(['buchen','admin','home','bewerten'].includes(h)&&h!==RT){RT=h;render()}});
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||e.ctrlKey||e.metaKey)return;const h=a.getAttribute('href').slice(1);if(!h)return;e.preventDefault();go(h)});
 function nav(o){$('#dw').classList.toggle('op',!!o);document.body.style.overflow=o?'hidden':''}
-function render(){const h=route();document.body.dataset.r=h;$('main').innerHTML=(h==='buchen'?Book:h==='admin'?Admin:Home)();$('.bar').hidden=h==='admin';$('footer').hidden=h==='admin';
+function render(){const h=route();document.body.dataset.r=h;$('main').innerHTML=(h==='buchen'?Book:h==='admin'?Admin:h==='bewerten'?RevPage:Home)();$('.bar').hidden=h==='admin';$('footer').hidden=h==='admin';
  if(h==='home'){updSel();homeInit()}if(h==='buchen')bkInit();if(h==='admin')admInit();renderChrome()}
 function renderChrome(){$$('.wm').forEach(w=>w.textContent=S.name);document.title=S.name+' – '+S.tag;$('footer').innerHTML=`<span class="wm">${esc(S.name)}</span>${esc(S.addr1)}, ${esc(S.addr2)}${S.tel?` · <a href="${telHref(S.tel)}">${esc(S.tel)}</a>`:''}<br><button onclick="go('admin')">Studio-Login</button>`;const di=$('#dw .dinfo');if(di){const o=openState();di.innerHTML=`<p class="live ${o.on?'on':''}"><i></i>${o.t}</p><p>${esc(S.addr1)}, ${esc(S.addr2)}</p>${S.tel?`<a href="${telHref(S.tel)}">📞 ${esc(S.tel)}</a>`:''}`}}
 /* ---------- Startseite ---------- */
@@ -338,6 +365,7 @@ function Home(){const os=openState(),hero=pic('hero'),ab=pic('about'),G=gal();
  ${G.length?`<section class="sec" id="galerie"><h2>Unsere Arbeit</h2><p class="sub">Echte Nägel aus unserem Studio – tipp auf ein Foto für die große Ansicht.</p><div class="gal${G.length>9?' more':''}">${G.map((g,i)=>`<button class="gi" onclick="lb(${i})" aria-label="Foto ${i+1} groß anzeigen"><img src="${g}" alt="Nageldesign ${i+1} von ${esc(S.name)}" loading="lazy"></button>`).join('')}</div>${G.length>9?`<div class="gmore"><button class="b gh" onclick="const g=$('.gal');g.classList.toggle('open');this.textContent=g.classList.contains('open')?'Weniger anzeigen':'Alle ${G.length} Fotos ansehen'">Alle ${G.length} Fotos ansehen</button></div>`:''}</section>`:''}
  ${(PH.st||[]).length?`<section class="sec" id="studio"><h2>Unser Studio</h2><p class="sub">${esc(S.where||S.near)}.</p><div class="strip">${PH.st.map((g,i)=>`<figure><img src="${g}" alt="${esc(STC[i]||'Studio')}" loading="lazy"><figcaption>${esc(STC[i]||'')}</figcaption></figure>`).join('')}</div></section>`:''}
  ${(PH.pr||[]).length?`<section class="sec" id="produkte"><h2>Nur Markenprodukte</h2><p class="sub">Wir arbeiten mit CND Shellac, Blazing Star und hochwertigen Pulversystemen – für Nägel, die halten.</p><div class="strip sm">${PH.pr.map((g,i)=>`<figure><img src="${g}" alt="${esc(PRC[i]||'Produkt')}" loading="lazy"><figcaption>${esc(PRC[i]||'')}</figcaption></figure>`).join('')}</div></section>`:''}
+ ${S.rev?`<section class="sec" id="bewerten">${RevBox()}</section>`:''}
  <section class="sec" id="kontakt"><h2>Besuch uns</h2><p class="sub">${esc(S.near)}.</p><div class="visit"><div class="card"><h3>Öffnungszeiten</h3><div class="hrs">${hoursRows().map(r=>`<div class="${r.td?'td':''}"><span>${r.l}</span><span>${r.h}${r.h!=='geschlossen'?' Uhr':''}</span></div>`).join('')}</div><p class="note">${esc(S.pay)}</p></div>
  <div class="card">${PH.front?`<img class="front" src="${PH.front}" alt="Eingang von ${esc(S.name)} im Mundsburg Center" loading="lazy">`:''}<h3>Adresse</h3><p>${esc(S.name)}<br>${esc(S.addr1)}<br>${esc(S.addr2)}</p>${S.where?`<p class="note">${esc(S.where)}</p>`:''}<div class="vl"><a class="b gh" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(S.name+' '+S.addr1+' '+S.addr2)}" target="_blank" rel="noopener">Route planen</a>${S.tel?`<a class="b gh" href="${telHref(S.tel)}">Anrufen: ${esc(S.tel)}</a>`:''}${S.wa?`<a class="b gh" href="https://wa.me/${waNum(S.wa)}" target="_blank" rel="noopener">WhatsApp</a>`:''}${S.ig?`<a class="b gh" href="https://www.instagram.com/${esc(S.ig)}" target="_blank" rel="noopener">Instagram</a>`:''}<a class="b" href="#leistungen">Termin buchen</a></div></div></div></section>
  <div class="cbar hid"><span></span><a class="b" href="#buchen">Weiter</a></div>`}
@@ -381,15 +409,30 @@ function lb(i){const G=gal();lbI=(i+G.length)%G.length;let d=$('#lbx');if(!d){d=
 function lbClose(){const d=$('#lbx');if(d)d.classList.remove('on');document.body.style.overflow=''}
 addEventListener('keydown',e=>{const d=$('#lbx');if(!d||!d.classList.contains('on'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lb(lbI+1);if(e.key==='ArrowLeft')lb(lbI-1)});
 
+/* ---------- Bewertungen: 4–5 Sterne → Google, 1–3 Sterne → privates Feedback ---------- */
+let vs=0,vstep=0;
+const gLink=()=>S.revG||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(S.name+' '+S.addr1+' '+S.addr2));
+const STARS=n=>[1,2,3,4,5].map(i=>`<button type="button" role="radio" aria-checked="${i===n}" aria-label="${i} ${i>1?'Sterne':'Stern'}" class="${i<=n?'on':''}" onclick="pickStar(${i})">★</button>`).join('');
+function pickStar(n){vs=n;if(n>=4){vstep=4;const g=gLink();let w=null;try{w=window.open(g,'_blank');if(w)w.opener=null}catch(e){}reRev();if(!w){try{location.href=g}catch(e){}}return}vstep=1;reRev();setTimeout(()=>{const t=$('#vt');t&&t.focus()},50)}
+function reRev(){const b=$('#rvb');if(b)b.outerHTML=RevBox();else render()}
+function RevBox(){
+ if(vstep===2)return `<div class="rvb card" id="rvb"><div class="ic" aria-hidden="true">♡</div><h2>Danke für dein Feedback!</h2><p class="mu">Deine Nachricht ist direkt bei uns angekommen. Wir melden uns, wenn du Kontaktdaten angegeben hast.</p><button class="b gh" onclick="vs=0;vstep=0;reRev()">Fertig</button></div>`;
+ if(vstep===4)return `<div class="rvb card" id="rvb"><div class="stp2">${STARS(vs)}</div><h2>Danke, das freut uns riesig!</h2><p class="mu">Google ist in einem neuen Tab geöffnet – dort kannst du deine Bewertung schreiben. Hat sich nichts geöffnet?</p><a class="b" href="${esc(gLink())}" target="_blank" rel="noopener">Auf Google bewerten</a><button class="lk" onclick="vs=0;vstep=0;reRev()">Zurück</button></div>`;
+ if(vstep===1)return `<form class="rvb card" id="rvb" data-act="rate" onsubmit="event.preventDefault()" novalidate><div class="stp2">${STARS(vs)}</div><h2>Das tut uns leid.<br>Was können wir besser machen?</h2><p class="mu">Deine Nachricht geht direkt an unser Team und wird nicht veröffentlicht.</p><div class="fg"><label class="f">Name<input id="vn" autocomplete="given-name"></label><label class="f">Telefon oder E-Mail <small>(optional)</small><input id="vk"></label><label class="f full">Was ist passiert?<textarea id="vt" rows="4"></textarea></label></div><p class="err" id="verr" role="alert"></p><button class="b full">Feedback senden</button></form>`;
+ return `<div class="rvb card" id="rvb"><h2>Wie war dein Besuch?</h2><p class="mu">Tipp auf die Sterne – dein Feedback hilft uns sehr.</p><div class="stp2" role="radiogroup" aria-label="Sterne">${STARS(vs)}</div></div>`}
+function rate(){const n=$('#vn').value.trim(),t=$('#vt').value.trim();if(!t){$('#verr').textContent='Bitte schreib kurz, was passiert ist.';$('#vt').focus();return}
+ R.push({id:Date.now(),n:n||'Anonym',s:vs,t,k:$('#vk').value.trim(),at:Date.now(),neu:1});saveR();vstep=2;reRev()}
+function RevPage(){return `<div class="bk"><a class="lk" href="#home">← ${esc(S.name)}</a><div style="margin-top:14px">${RevBox()}</div></div>`}
+
 /* ================= ADMIN ================= */
 let adw=0;const MBI='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>';
 function adNav(o){adw=o?1:0;const d=$('.ad');if(d)d.classList.toggle('dop',!!o);document.body.style.overflow=o?'hidden':''}
 let au=(()=>{try{return sessionStorage.getItem('nnsA')==='1'}catch(e){return false}})(),at='termine',ad=ymd(new Date()),editId=null,nb=null;
 const ST={neu:['Anfrage','#b7701c'],ok:['Bestätigt','#2f8f5b'],da:['Erschienen','#5a6cc7'],no:['Nicht erschienen','#8a8a8a'],x:['Storniert','#b23a3a']};
-const AT={termine:'Termine',neu:'Neuer Termin',leist:'Leistungen & Preise',zeiten:'Öffnungszeiten',fotos:'Fotos',texte:'Texte & Kontakt',umsatz:'Umsatz',daten:'Daten'};
+const AT={termine:'Termine',neu:'Neuer Termin',leist:'Leistungen & Preise',zeiten:'Öffnungszeiten',fotos:'Fotos',texte:'Texte & Kontakt',bew:'Bewertungen',umsatz:'Umsatz',daten:'Daten'};
 function Admin(){if(!au)return `<div class="ad lg"><a class="lk" href="#home">← Zur Website</a><h1>Studio-Login</h1><form class="card" data-act="aLogin" onsubmit="event.preventDefault()"><label class="f">Benutzername<input id="aus" autocomplete="username" autocapitalize="none" spellcheck="false"></label><label class="f" style="margin-top:12px">Passwort<span class="pw"><input id="apw" type="password" autocomplete="current-password"><button type="button" class="eye" onclick="const i=$('#apw');i.type=i.type==='password'?'text':'password'" aria-label="Passwort anzeigen">👁</button></span></label><button class="b full" style="margin-top:16px">Anmelden</button></form></div>`;
  const nN=B.filter(b=>b.st==='neu').length;
- return `<div class="ad"><div class="atop"><button class="mb" onclick="adNav(1)" aria-label="Menü öffnen">${MBI}</button><b>${AT[at]}</b>${nN?`<button class="anew" onclick="at='termine';render()">${nN} neu</button>`:''}</div><div class="abk" onclick="adNav(0)"></div><aside class="as"><div class="ah"><div><b>${esc(S.name)}</b><small>Studio-Verwaltung</small></div><button class="ax" onclick="adNav(0)" aria-label="Menü schließen">✕</button></div><nav>${Object.entries(AT).map(([k,n])=>`<button class="${at===k?'on':''}" onclick="at='${k}';editId=null;adNav(0);render();scrollTo({top:0,behavior:'instant'})">${n}${k==='termine'&&B.filter(b=>b.st==='neu').length?` <i>${B.filter(b=>b.st==='neu').length}</i>`:''}</button>`).join('')}</nav><div class="af"><a href="#home">Zur Website</a><button onclick="aOut()">Abmelden</button></div></aside><section class="ac"><h1>${AT[at]}</h1>${({termine:Termine,neu:NeuT,leist:Leist,zeiten:Zeiten,fotos:Fotos,texte:Texte,umsatz:Umsatz,daten:Daten})[at]()}</section></div>`}
+ return `<div class="ad"><div class="atop"><button class="mb" onclick="adNav(1)" aria-label="Menü öffnen">${MBI}</button><b>${AT[at]}</b>${nN?`<button class="anew" onclick="at='termine';render()">${nN} neu</button>`:''}</div><div class="abk" onclick="adNav(0)"></div><aside class="as"><div class="ah"><div><b>${esc(S.name)}</b><small>Studio-Verwaltung</small></div><button class="ax" onclick="adNav(0)" aria-label="Menü schließen">✕</button></div><nav>${Object.entries(AT).map(([k,n])=>`<button class="${at===k?'on':''}" onclick="at='${k}';editId=null;adNav(0);render();scrollTo({top:0,behavior:'instant'})">${n}${k==='termine'&&B.filter(b=>b.st==='neu').length?` <i>${B.filter(b=>b.st==='neu').length}</i>`:''}${k==='bew'&&R.filter(x=>x.neu).length?` <i>${R.filter(x=>x.neu).length}</i>`:''}</button>`).join('')}</nav><div class="af"><a href="#home">Zur Website</a><button onclick="aOut()">Abmelden</button></div></aside><section class="ac"><h1>${AT[at]}</h1>${({termine:Termine,neu:NeuT,leist:Leist,zeiten:Zeiten,fotos:Fotos,texte:Texte,bew:Bew,umsatz:Umsatz,daten:Daten})[at]()}</section></div>`}
 /* SHA-256 (damit das Passwort nicht im Klartext in der Datei steht) */
 function sha256(s){const K=[],H=[];let p=2,n=0;const ip=x=>{for(let i=2;i*i<=x;i++)if(x%i==0)return 0;return 1},fr=x=>(x-Math.floor(x))*4294967296|0;
  while(n<64){if(ip(p)){if(n<8)H[n]=fr(Math.pow(p,1/2));K[n++]=fr(Math.pow(p,1/3))}p++}
@@ -408,28 +451,59 @@ function aOut(){au=false;try{sessionStorage.removeItem('nnsA')}catch(e){}go('hom
 function admInit(){}
 /* ---- Termine ---- */
 const endT=b=>fmT(toMin(b.t)+b.dur);
+function sig(){const h=hoursRows().filter(r=>r.h!=='geschlossen').map(r=>`${r.l}: ${r.h} Uhr`).join('\n');
+ return `\n\nLiebe Grüße\nDein Team von ${S.name}\n\n——————————\n${S.name}\n${S.addr1}\n${S.addr2}${S.where?'\n'+S.where:''}${S.tel?'\nTel.: '+S.tel:''}${S.wa?'\nWhatsApp: '+S.wa:''}${S.mail?'\nE-Mail: '+S.mail:''}${h?'\nÖffnungszeiten: '+h:''}${S.pay?'\n'+S.pay:''}`}
 function msg(b,kind){const w=`${fD(b.date)} um ${b.t} Uhr`,sv=b.svc.map(x=>x.n).join(', ');
- return kind==='x'?`Hallo ${b.name},\n\nleider müssen wir deinen Termin am ${w} absagen. Das tut uns leid! Melde dich gern für einen neuen Termin.\n\n${S.name}`:kind==='rem'?`Hallo ${b.name},\n\nkleine Erinnerung an deinen Termin bei ${S.name}: ${w} (${sv}).\nWir freuen uns auf dich!\n\n${S.addr1}, ${S.addr2}`:`Hallo ${b.name},\n\ndein Termin bei ${S.name} ist bestätigt:\n${w}\n${sv}\nPreis: ${eur(b.price)}\n\n${S.addr1}, ${S.addr2}\nBis bald!`}
-function infoBox(id){const b=B.find(x=>x.id===id);if(!b)return;const k=b.st==='x'?'x':'ok',m=msg(b,k),sub=(k==='x'?'Absage: ':'Bestätigung: ')+'Dein Termin bei '+S.name;
+ const body=kind==='x'?`Hallo ${b.name},\n\nleider müssen wir deinen Termin am ${w} absagen. Das tut uns sehr leid!\nBuch dir gern einen neuen Termin – online oder telefonisch.`
+ :kind==='bew'?`Hallo ${b.name},
+
+danke, dass du bei uns warst! 💅
+Wie zufrieden bist du mit deinen Nägeln? Wir freuen uns sehr über eine kurze Bewertung – das dauert nur 1 Minute:
+
+👉 ${revUrl()}`
+ :kind==='rem'?`Hallo ${b.name},\n\nkleine Erinnerung an deinen Termin:\n📅 ${w}\n💅 ${sv}\n\nFalls du nicht kommen kannst, sag uns bitte kurz Bescheid.`
+ :`Hallo ${b.name},\n\ndein Termin ist bestätigt ✅\n\n📅 ${w}\n💅 ${sv}\n💶 ${eur(b.price)}\n\nWir freuen uns auf dich! Falls du nicht kommen kannst, sag uns bitte kurz Bescheid.`;
+ return body+sig()}
+const KT={bew:['Bitte um Bewertung','Um Bewertung bitten'],ok:['Bestätigung','Termin bestätigt'],x:['Absage','Termin storniert'],rem:['Erinnerung','Erinnerung senden']};
+function infoBox(id,kind){const b=B.find(x=>x.id===id);if(!b)return;const k=kind||(b.st==='x'?'x':'ok'),m=msg(b,k),sub=KT[k][0]+': Dein Termin bei '+S.name;
  $$('.ibx').forEach(x=>x.remove());const d=document.createElement('div');d.className='ibx';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');
- d.innerHTML=`<div class="card"><h3>${k==='x'?'Termin storniert':'Termin bestätigt'} – ${esc(b.name)} informieren</h3><p class="mu" style="margin-bottom:10px">Wähl, wie die Kundin die ${k==='x'?'Absage':'Bestätigung'} bekommen soll. Der Text ist schon fertig:</p><pre class="mtx">${esc(m)}</pre><div class="ibb">
- ${b.mail?`<a class="b" href="mailto:${esc(b.mail)}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(m)}" onclick="mInf(${b.id},'E-Mail')">📧 Per E-Mail senden</a>`:`<p class="note">Keine E-Mail-Adresse angegeben.</p>`}
- ${b.tel?`<a class="b gh" href="https://wa.me/${waNum(b.tel)}?text=${encodeURIComponent(m)}" target="_blank" rel="noopener" onclick="mInf(${b.id},'WhatsApp')">💬 Per WhatsApp senden</a><a class="b gh" href="sms:${String(b.tel).replace(/[^\d+]/g,'')}?&body=${encodeURIComponent(m)}" onclick="mInf(${b.id},'SMS')">✉️ Per SMS senden</a><a class="b gh" href="${telHref(b.tel)}" onclick="mInf(${b.id},'Anruf')">📞 Anrufen: ${esc(b.tel)}</a>`:''}
+ d.innerHTML=`<div class="card"><h3>${KT[k][1]} – ${esc(b.name)}</h3><p class="mu" style="margin-bottom:10px">Wie soll die Kundin die ${KT[k][0]} bekommen? Der Text ist fertig:</p><pre class="mtx">${esc(m)}</pre><div class="ibb">
+ ${b.mail?`<a class="b" href="mailto:${esc(b.mail)}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(m)}" onclick="mInf(${b.id},'E-Mail','${k}')">📧 Per E-Mail senden</a>`:''}
+ ${b.tel?`<a class="b ${b.mail?'gh':''}" href="https://wa.me/${waNum(b.tel)}?text=${encodeURIComponent(m)}" target="_blank" rel="noopener" onclick="mInf(${b.id},'WhatsApp','${k}')">💬 Per WhatsApp senden</a><a class="b gh" href="sms:${String(b.tel).replace(/[^\d+]/g,'')}?&body=${encodeURIComponent(m)}" onclick="mInf(${b.id},'SMS','${k}')">✉️ Per SMS senden</a>`:''}
  <button class="lk" onclick="this.closest('.ibx').remove()">Später</button></div></div>`;
  d.addEventListener('click',e=>{if(e.target===d)d.remove()});document.body.appendChild(d)}
-function mInf(id,via){const b=B.find(x=>x.id===id);if(b){b.inf=via;saveB()}setTimeout(()=>{$$('.ibx').forEach(x=>x.remove());render();toast('Kundin informiert per '+via)},300)}
-function cBtns(b){const k=b.st==='x'?'x':b.st==='ok'?'ok':'rem';const m=msg(b,b.st==='x'?'x':'ok');return `${b.st==='ok'||b.st==='x'?(b.inf?`<span class="inf">✓ informiert (${esc(b.inf)})</span>`:`<button class="b sm" onclick="infoBox(${b.id})">Kundin informieren</button>`):''}${b.tel?`<a class="b sm gh" href="https://wa.me/${waNum(b.tel)}?text=${encodeURIComponent(m)}" target="_blank" rel="noopener">WhatsApp</a><a class="b sm gh" href="${telHref(b.tel)}">Anrufen</a>`:''}${b.mail?`<a class="b sm gh" href="mailto:${esc(b.mail)}?subject=${encodeURIComponent('Dein Termin bei '+S.name)}&body=${encodeURIComponent(m)}">E-Mail</a>`:''}${b.tel&&b.st==='ok'?`<a class="b sm gh" href="https://wa.me/${waNum(b.tel)}?text=${encodeURIComponent(msg(b,'rem'))}" target="_blank" rel="noopener">Erinnerung</a>`:''}`}
+function mInf(id,via,k){const b=B.find(x=>x.id===id);if(b){if(k==='rem')b.rem=via;else if(k==='bew')b.bew=via;else b.inf=via;saveB()}setTimeout(()=>{$$('.ibx').forEach(x=>x.remove());render();toast((k==='rem'?'Erinnerung gesendet per ':k==='bew'?'Bewertungs-Anfrage gesendet per ':'Kundin informiert per ')+via)},300)}
+/* Menü „Mehr“ für einen Termin */
+function more(id){const b=B.find(x=>x.id===id);if(!b)return;$$('.ibx').forEach(x=>x.remove());const lv=b.st==='ok'||b.st==='neu';
+ const d=document.createElement('div');d.className='ibx sh';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');
+ d.innerHTML=`<div class="card"><h3>${esc(b.name)} · ${b.t} Uhr</h3><div class="ibb">
+ ${b.st==='ok'||b.st==='x'?`<button class="b gh" onclick="infoBox(${b.id})">${b.st==='x'?'Absage':'Bestätigung'} senden</button>`:''}
+ ${b.st==='ok'&&b.tel?`<button class="b gh" onclick="infoBox(${b.id},'rem')">Erinnerung senden${b.rem?' ✓':''}</button>`:''}
+ ${lv?`<button class="b gh" onclick="this.closest('.ibx').remove();nb=JSON.parse(JSON.stringify(B.find(x=>x.id===${b.id})));at='neu';render();scrollTo({top:0,behavior:'instant'})">Verschieben / bearbeiten</button>`:''}
+ ${b.st==='da'&&b.tel?`<button class="b gh" onclick="infoBox(${b.id},'bew')">Um Bewertung bitten${b.bew?' ✓':''}</button>`:''}
+ ${b.st==='ok'?`<button class="b gh" onclick="this.closest('.ibx').remove();setSt(${b.id},'no')">Nicht erschienen</button>`:''}
+ ${lv?`<button class="b gh dn" onclick="this.closest('.ibx').remove();setSt(${b.id},'x')">Termin stornieren</button>`:`<button class="b gh" onclick="this.closest('.ibx').remove();setSt(${b.id},'ok')">Zurücksetzen auf „Bestätigt“</button>`}
+ <button class="lk" onclick="this.closest('.ibx').remove()">Schließen</button></div></div>`;
+ d.addEventListener('click',e=>{if(e.target===d)d.remove()});document.body.appendChild(d)}
+const ICN={tel:'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
+ wa:'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>',
+ mail:'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'};
+function card(b){const lv=b.st==='ok'||b.st==='neu';
+ return `<div class="tc st-${b.st}"><div class="th"><b>${b.t}</b><small>– ${endT(b)}</small><span class="bd" style="background:${ST[b.st][1]}">${ST[b.st][0]}</span></div>
+ <div class="tn2">${esc(b.name)}</div><div class="ts">${b.svc.map(x=>esc(x.n)).join(' · ')} · <b>${eur(b.price)}</b></div>${b.note?`<div class="nt">${esc(b.note)}</div>`:''}
+ <div class="ci">${b.tel?`<a class="ic" href="${telHref(b.tel)}" aria-label="Anrufen">${ICN.tel}</a><a class="ic" href="https://wa.me/${waNum(b.tel)}" target="_blank" rel="noopener" aria-label="WhatsApp">${ICN.wa}</a>`:''}${b.mail?`<a class="ic" href="mailto:${esc(b.mail)}" aria-label="E-Mail">${ICN.mail}</a>`:''}
+ ${b.st==='ok'||b.st==='x'?(b.inf?`<span class="inf">✓ informiert</span>`:`<button class="nfo" onclick="infoBox(${b.id})">! Kundin informieren</button>`):''}</div>
+ <div class="ab2">${b.st==='neu'?`<button class="b sm" onclick="setSt(${b.id},'ok')">Bestätigen</button><button class="b sm gh dn" onclick="setSt(${b.id},'x')">Ablehnen</button>`:b.st==='ok'?`<button class="b sm" onclick="setSt(${b.id},'da')">✓ Erschienen</button>`:''}<button class="b sm gh mo" onclick="more(${b.id})" aria-label="Mehr Optionen">⋯ Mehr</button></div></div>`}
 function Termine(){const d0=new Date(ad+'T12:00');const wk=[...Array(7)].map((_,i)=>{const d=new Date(d0);d.setDate(d0.getDate()-d0.getDay()+1+i);return ymd(d)});
  const L=B.filter(b=>b.date===ad).sort((a,b)=>a.t.localeCompare(b.t)),act=L.filter(live);const nw=B.filter(b=>b.st==='neu').sort((a,b)=>(a.date+a.t).localeCompare(b.date+b.t));
  return `${nw.length?`<div class="card wn"><b>${nw.length} neue Anfrage${nw.length>1?'n':''} – bitte bestätigen</b>${nw.map(b=>`<div class="ar"><span>${fD(b.date)}, ${b.t} · ${esc(b.name)}</span><button class="b sm" onclick="setSt(${b.id},'ok')">Bestätigen</button><button class="b sm gh" onclick="ad='${b.date}';render()">Ansehen</button></div>`).join('')}</div>`:''}
  <div class="dnav"><button class="b sm gh" onclick="shiftD(-1)" aria-label="Vorheriger Tag">‹</button><input type="date" class="inp" value="${ad}" onchange="ad=this.value;render()"><button class="b sm gh" onclick="shiftD(1)" aria-label="Nächster Tag">›</button><button class="b sm gh" onclick="ad=ymd(new Date());render()">Heute</button></div>
  <div class="wk">${wk.map(d=>{const n=B.filter(b=>b.date===d&&live(b)).length,x=new Date(d+'T12:00');return `<button class="${d===ad?'on':''} ${d===ymd(new Date())?'td':''}" onclick="ad='${d}';render()"><small>${DS[x.getDay()]}</small><b>${x.getDate()}</b><i>${n||''}</i></button>`}).join('')}</div>
  <p class="mu" style="margin:6px 0 14px">${fD(ad)} · ${act.length} Termin${act.length===1?'':'e'} · ${eur(act.reduce((s,b)=>s+b.price,0))}${S.off.includes(ad)?' · <b style="color:var(--bad)">Studio geschlossen (Urlaub)</b>':''}</p>
- ${L.length?L.map(b=>`<div class="tc st-${b.st}"><div class="tt"><b>${b.t}</b><small>bis ${endT(b)}</small></div><div class="tb"><div class="tn"><b>${esc(b.name)}</b> <span class="bd" style="background:${ST[b.st][1]}">${ST[b.st][0]}</span> <small class="mu">${esc(b.src)}</small></div><div>${b.svc.map(x=>esc(x.n)).join(' · ')} · <b>${eur(b.price)}</b></div>${b.note?`<div class="nt">„${esc(b.note)}“</div>`:''}<div class="mu">${b.tel?`<a href="${telHref(b.tel)}">${esc(b.tel)}</a>`:''}${b.mail?' · '+esc(b.mail):''}</div>
- <div class="ab">${b.st==='neu'?`<button class="b sm" onclick="setSt(${b.id},'ok')">Bestätigen</button>`:''}${b.st==='ok'||b.st==='neu'?`<button class="b sm gh" onclick="setSt(${b.id},'da')">Erschienen</button><button class="b sm gh" onclick="setSt(${b.id},'no')">Nicht erschienen</button><button class="b sm gh" onclick="nb=JSON.parse(JSON.stringify(B.find(x=>x.id===${b.id})));at='neu';render()">Verschieben</button><button class="b sm gh dn" onclick="setSt(${b.id},'x')">Stornieren</button>`:`<button class="b sm gh" onclick="setSt(${b.id},'ok')">Zurücksetzen</button>`}</div><div class="ab">${cBtns(b)}</div></div></div>`).join(''):'<p class="empty">Keine Termine an diesem Tag.</p>'}
+ ${L.length?L.map(card).join(''):'<p class="empty">Keine Termine an diesem Tag.</p>'}
  <a class="b" style="margin-top:16px" href="#admin" onclick="event.preventDefault();nb=null;at='neu';render()">+ Termin eintragen</a>`}
 function shiftD(n){const d=new Date(ad+'T12:00');d.setDate(d.getDate()+n);ad=ymd(d);render()}
-function setSt(id,s){const b=B.find(x=>x.id===id);if(!b)return;if(s==='x'&&!confirm('Termin von '+b.name+' wirklich stornieren?'))return;b.st=s;if(s==='ok'||s==='x')b.inf=0;saveB();render();if(s==='ok'||s==='x'){infoBox(b.id);return}toast({da:'Als erschienen markiert',no:'Als nicht erschienen markiert'}[s]||'Gespeichert')}
+function setSt(id,s){const b=B.find(x=>x.id===id);if(!b)return;if(s==='x'&&!confirm('Termin von '+b.name+(b.st==='neu'?' ablehnen?':' wirklich stornieren?')))return;b.st=s;if(s==='ok'||s==='x')b.inf=0;saveB();render();if(s==='ok'||s==='x'){infoBox(b.id);return}if(s==='da'&&b.tel&&S.rev&&!b.bew){infoBox(b.id,'bew');return}toast({da:'Als erschienen markiert',no:'Als nicht erschienen markiert'}[s]||'Gespeichert')}
 /* ---- Neuer Termin / Verschieben ---- */
 function NeuT(){if(!nb)nb={id:0,svc:[],date:ymd(new Date()),t:'',name:'',tel:'',mail:'',note:'',src:'Telefon'};const len=nb.svc.reduce((s,x)=>s+x.d,0)||15,sl=slotsFor(nb.date,len,nb.id);
  return `<div class="two2"><div class="card"><h3>1. Leistungen</h3>${S.catList.map(c=>`<details ${nb.svc.some(x=>x.cat===c)?'open':''}><summary>${esc(c)}</summary>${S.svc.filter(x=>x.cat===c&&x.on).map(x=>`<label class="ck"><input type="checkbox" ${nb.svc.some(y=>y.id===x.id)?'checked':''} onchange="nbTog('${x.id}',this.checked)"> ${esc(x.n)} <small>${dur(+x.d)} · ${eur(x.p)}</small></label>`).join('')}</details>`).join('')}<p class="tot"><span>Gesamt</span><span>${eur(nb.svc.reduce((s,x)=>s+x.p,0))} · ${dur(len)}</span></p></div>
@@ -476,6 +550,16 @@ function dl(name,txt,type){try{const a=document.createElement('a');a.href=URL.cr
 function Daten(){return `<div class="card"><h3>Termine exportieren</h3><p class="mu">Als Tabelle für Excel oder Google Sheets.</p><button class="b" onclick="csv()">CSV herunterladen</button></div><div class="card"><h3>Sicherung</h3><p class="mu">Alle Termine, Leistungen und Einstellungen als Datei sichern oder wiederherstellen.</p><div class="row2"><button class="b gh" onclick="dl('Sicherung-${esc(S.name.replace(/\s+/g,'-'))}.json',JSON.stringify({S,B}),'application/json')">Sicherung herunterladen</button><label class="b gh">Sicherung laden<input type="file" accept=".json" hidden onchange="restore(this)"></label></div></div>`}
 function csv(){const r=[['Datum','Uhrzeit','Bis','Name','Telefon','E-Mail','Leistungen','Preis','Status','Quelle','Notiz']].concat(B.slice().sort((a,b)=>(a.date+a.t).localeCompare(b.date+b.t)).map(b=>[b.date,b.t,endT(b),b.name,b.tel,b.mail,b.svc.map(x=>x.n).join(' + '),String(b.price).replace('.',','),ST[b.st][0],b.src,b.note]));dl('Termine.csv','﻿'+r.map(x=>x.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\n'),'text/csv')}
 function restore(inp){const f=inp.files&&inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.S||!d.B)throw 0;if(!confirm('Alle aktuellen Daten durch die Sicherung ersetzen?'))return;S=Object.assign(initS(),d.S);B=d.B;saveS();saveB();render();toast('Sicherung geladen')}catch(e){toast('Ungültige Datei',1)}};r.readAsText(f)}
+
+/* ---- Bewertungen ---- */
+const revUrl=()=>location.href.split('#')[0].split('?')[0]+'#bewerten';
+function Bew(){const nw=R.filter(x=>x.neu).length;if(nw){R.forEach(x=>delete x.neu);saveR()}
+ return `<div class="card"><h3>So funktioniert’s</h3><p class="mu" style="margin-bottom:10px">Kundinnen geben auf der Website Sterne. <b>4–5 Sterne</b> → sie kommen direkt zu Google und bewerten dort. <b>1–3 Sterne</b> → sie schreiben dir hier privat, was nicht gepasst hat (wird nicht veröffentlicht).</p>
+ <label class="ck"><input type="checkbox" ${S.rev?'checked':''} onchange="S.rev=this.checked;saveS();toast('Gespeichert')"> Bewertungen auf der Website anzeigen</label>
+ <label class="f" style="margin-top:12px">Google-Bewertungslink <small>(leer = Google Maps-Suche)</small><input value="${esc(S.revG)}" placeholder="https://g.page/r/…/review" onchange="S.revG=this.value.trim();saveS();toast('Gespeichert')"></label>
+ <label class="f" style="margin-top:12px">Link zum Bewerten (zum Verschicken an Kundinnen)<span class="pw"><input readonly value="${esc(revUrl())}" onclick="this.select()"></span></label>
+ <div class="acts" style="margin-top:10px"><button class="b sm gh" onclick="try{navigator.clipboard.writeText(revUrl());toast('Link kopiert')}catch(e){toast('Bitte Link markieren und kopieren',1)}">Link kopieren</button><a class="b sm gh" href="${esc(gLink())}" target="_blank" rel="noopener">Google-Link testen</a></div></div>
+ <div class="card"><h3>Privates Feedback (1–3 Sterne)</h3>${R.length?R.slice().reverse().map(x=>`<div class="fbi"><div class="fbh"><b>${esc(x.n)}</b><span class="stx">${'★'.repeat(x.s)}<i>${'★'.repeat(5-x.s)}</i></span><small class="mu">${new Date(x.at).toLocaleDateString('de-DE',{day:'numeric',month:'short',year:'numeric'})}</small></div><p>${esc(x.t)}</p>${x.k?`<div class="ci">${/@/.test(x.k)?`<a class="b sm gh" href="mailto:${esc(x.k)}">E-Mail an ${esc(x.k)}</a>`:`<a class="b sm gh" href="${telHref(x.k)}">Anrufen</a><a class="b sm gh" href="https://wa.me/${waNum(x.k)}" target="_blank" rel="noopener">WhatsApp</a>`}</div>`:''}<button class="lk dn" onclick="if(confirm('Feedback löschen?')){R=R.filter(y=>y.id!==${x.id});saveR();render()}">Löschen</button></div>`).join(''):'<p class="mu">Noch kein Feedback – super! 🎉</p>'}</div>`}
 
 document.addEventListener('click',e=>{const bt=e.target.closest('form[data-act] button');if(bt&&(bt.type==='submit'||!bt.getAttribute('type'))){e.preventDefault();const fn=window[bt.closest('form').dataset.act];if(typeof fn==='function')fn()}},true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')nav(0);if(e.key!=='Enter'||e.isComposing)return;const el=e.target;if(!el.matches||!el.matches('input'))return;const f=el.closest('form[data-act]');if(!f)return;e.preventDefault();const fn=window[f.dataset.act];if(typeof fn==='function')fn()});
